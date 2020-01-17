@@ -55,13 +55,16 @@ function whatsAppShare(id) {
   var txt = document.getElementById(id);
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
-   // window.location.href = "whatsapp://send?text=" + txt.textContent + "Link: " + document.URL ;
-     window.open('twitter://share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');
-
+    window.location.href = "whatsapp://send?text=" + txt.textContent + "Link: " + document.URL;
   } else {
-    var whatsAppWindow = window.open('https://web.whatsapp.com://send?text=' + txt.textContent + 'Link: ' + document.URL ,"_blank");
+    var whatsAppWindow = window.open('https://web.whatsapp.com://send?text=' + txt.textContent + 'Link: ' + document.URL, "_blank");
     if (whatsAppWindow.focus) { whatsAppWindow.focus(); }
     return false;
   }
 }
 
+
+function tst()
+{
+  window.Location.href ='twitter://share?url=' + document.URL;
+}
