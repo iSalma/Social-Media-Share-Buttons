@@ -64,7 +64,13 @@ function whatsAppShare(id) {
 }
 
 
-function tst()
-{
-  window.Location.href ='twitter://';
+var fallbackToStore = function() {
+  window.location.replace('https://play.google.com/store/apps/details?id=com.twitter.android&hl=en');
+};
+var openApp = function() {
+  window.location.replace('twitter://');
+};
+ function tst() {
+  openApp();
+  setTimeout(fallbackToStore, 250);
 }
