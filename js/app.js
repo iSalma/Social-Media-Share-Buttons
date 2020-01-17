@@ -66,5 +66,5 @@ function whatsAppShare(id) {
 
 function tst()
 {
-  window.Location.href ='twitter://share?url=' + document.URL;
+  window.Location.href ='twitter://';
 }
