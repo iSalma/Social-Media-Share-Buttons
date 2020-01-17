@@ -13,10 +13,11 @@ twitterShare.onclick = function (e) {
 
 //  زر المشاركة الرابط علي فيسبوك  
 //  رقم 1 
+// يفتح الموقع غي new tab
 var facebookShare = document.querySelector('[data-js="facebook-share"]');
 facebookShare.onclick = function (e) {
   e.preventDefault();
-  var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
+  var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, "_blank");
   if (facebookWindow.focus) { facebookWindow.focus(); }
   return false;
 };
@@ -25,6 +26,7 @@ facebookShare.onclick = function (e) {
 
 //  زر المشاركة الرابط علي فيسبوك  
 //  رقم 2 
+// يفتح الموقع غي new window
 (function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -53,9 +55,9 @@ function whatsAppShare(id) {
   var txt = document.getElementById(id);
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
-    window.location.href = "whatsapp://send?text=" + txt.textContent + "Link:" + document.URL ;
+    window.location.href = "whatsapp://send?text=" + txt.textContent + "Link: " + document.URL ;
   } else {
-    var whatsAppWindow = window.open('https://web.whatsapp.com://send?text=' + txt.textContent, 'whatsapp-popup', 'height=350,width=600');
+    var whatsAppWindow = window.open('https://web.whatsapp.com://send?text=' + txt.textContent + 'Link: ' + document.URL ,"_blank");
     if (whatsAppWindow.focus) { whatsAppWindow.focus(); }
     return false;
   }
