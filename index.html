@@ -12,34 +12,41 @@
 
 
 <body>
-  <input value="hey" id="myText">
-  <button onclick="copyText('myText')">Copy text</button>
-
-  <div id="myp">helllllloooo</div>
-  <button id="btn" onclick="copyText('myp')">Copy text</button>
-
-  <br>
-  <br>
-  <br>
 
   <p id="shareText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit incidunt velit maiores! Corrupti
     laudantium iure corporis totam, fuga earum ad dolorem aut iusto numquam sunt veritatis rerum sit. Saepe, ab!</p>
 
-  <button class="btn twitter-share tweetButton twitter-share-button" data-js="twitter-share">Tweet <i class="fab fa-twitter"></i></button>
-  <button class="btn twitter-share fbButton" data-js="facebook-share">Share <i class="fab fa-facebook"></i></button>
+  <!--   زر مشاركة الرابط علي نويتر مع نسخ نص -->
+  <a id="tweetShare" class="twitter-share-button" data-text=" ">Tweet</a>
 
+<br>
+<br>
 
+  <!-- زر المشاركة الرابط علي نويتر  -->
+  <button class="btn btn-sm twitter-share tweetButton" data-js="twitter-share">Tweet <i
+      class="fab fa-twitter"></i></button>
 
-  <!-- Your share button code -->
-  <div id="fbShare" class="fb-share-button"
-    data-href="" data-layout="button">
+<br>
+<br>
+
+  <!-- زر المشاركة الرابط علي فيسبوك  -->
+  <!-- رقم1 -->
+  <button class="btn btn-sm facebook-share fbButton" data-js="facebook-share">Share <i
+      class="fab fa-facebook"></i></button>
+
+<br>
+<br>
+
+  <!-- زر المشاركة الرابط علي فيسبوك  -->
+  <!-- رقم 2 -->
+  <div id="fbShare" class="fb-share-button" data-href="" data-layout="button">
   </div>
 
-
-
-  <a id="tweetShare"  class="twitter-share-button" data-text=" ">Tweet</a>
-
-  <a href="https://api.whatsapp.com/send?text=textToshare" target="_blank">Share via Whatsapp API</a>
+  <br>
+  <br>
+  
+<!-- زر مشاركة علي الواتساب -->
+<button onclick="whatsAppShare('shareText')"> Whatsapp </button>
 
 
 
