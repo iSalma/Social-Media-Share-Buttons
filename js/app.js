@@ -1,6 +1,21 @@
 //js
 
+function twtPost(txtID, URL) {
+  var txt = document.getElementById(txtID).textContent;
+  window.open('https://twitter.com/share?text=' + txt + '&url=' + URL, "_blank");
+}
 
+function fbPost(URL) {
+  window.open('https://www.facebook.com/sharer/sharer.php?u=' + URL, "_blank");
+}
+
+function whatsAppShare(txtID, URL) {
+  var txt = document.getElementById(txtID).textContent;
+  window.location.href = "whatsapp://send?text=" + txt + " -- Link: " + URL;
+}
+
+
+////////////////////////////////////////////////
 //  زر المشاركة الرابط علي تويتر  
 //  رقم 1
 var twitterShare = document.querySelector('[data-js="twitter-share"]');
@@ -20,14 +35,14 @@ facebookShare.onclick = function (e) {
   var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, "_blank");
   if (facebookWindow.focus) { facebookWindow.focus(); }
   return false;
-};
+}
 
 
 
 //  زر المشاركة الرابط علي فيسبوك  
 //  رقم 2 
 // يفتح الموقع غي new window
-(function (d, s, id) {
+!(function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
@@ -64,13 +79,13 @@ function whatsAppShare(id) {
 }
 
 
-var fallbackToStore = function() {
+var fallbackToStore = function () {
   window.location.replace('https://play.google.com/store/apps/details?id=com.twitter.android&hl=en');
 };
-var openApp = function() {
+var openApp = function () {
   window.location.replace('twitter://');
 };
- function tst() {
+function tst() {
   openApp();
-  setTimeout(fallbackToStore, 250);
+  setTimeout(fallbackToStore, 500);
 }
